@@ -7,9 +7,11 @@ def display_list(file_path):
   try:
       with open(file_path, "r") as list:
         lines = list.readlines()
-            
+      
+        line_number = 0            
         for line in lines:
-          print(f"- {line.strip()}")
+          line_number += 1
+          print(f"{line_number}. {line.strip()}")
         
   except Exception as e:
       print("An error occurred:", e)
@@ -36,6 +38,13 @@ def delete_list(file_path):
 
     if delete_input in ["exit", "Exit", "EXIT"]:
       break
+
+    elif delete_input in ["display", "Display", "DISPLAY"]:
+      display_list(file_path)
+
+    elif delete_input in ["clear", "Clear", "CLEAR"]:
+      with open(file_path, "w") as list:
+        pass
     
     else:
       try:
@@ -46,15 +55,15 @@ def delete_list(file_path):
       with open(file_path, "r") as list:
         lines = list.readlines()
 
-    if 0 <= line_to_remove < len(lines):
-      print(f"'{lines[line_to_remove]}' has been removed")
-      del lines[line_to_remove]
+      if 0 <= line_to_remove < len(lines):
+        print(f"'{lines[line_to_remove]}' has been removed")
+        del lines[line_to_remove]
 
-      with open(file_path, "w") as list:
-        list.writelines(lines)
+        with open(file_path, "w") as list:
+          list.writelines(lines)
 
-    else:
-      print("Line number is out of range.")
+      else:
+        print("Line number is out of range.")
 
 
 running = True
