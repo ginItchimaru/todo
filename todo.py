@@ -71,7 +71,13 @@ while running:
   usrinput = input("> ")
 
   if usrinput in ["i", "I", "info"]:
-    print("missing")
+    print("To exit type 'exit'\n"
+          "DISPLAY LIST:\n  'display' to display the todo list\n"
+          "WRITE MODE:\n  Anything you enter here will be added to the todo list\n  'write' to enter Write Mode\n"
+          "  'exit' to exit write mode\n"
+          "DELETE MODE:\n  enter the number of the line you want to delete to delete it from the list\n"
+          "  'delete' to enter Delete Mode\n  'display' to display the list in Delete Mode\n"
+          "  'clear' to clear the whole list of its contents\n  'exit' to exit the Delete Mode")
     
   if usrinput in ["exit", "Exit", "EXIT"]:
     running = False
