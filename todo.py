@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
-file_path = "list.txt"
+file_path = ""
+
+def change_list(list="list.txt"):
+  global file_path
+  file_path = list
 
 
 def display_list(file_path):
@@ -69,6 +73,7 @@ def delete_list(file_path):
 running = True
 while running:
   usrinput = input("> ")
+  change_list()
 
   if usrinput in ["i", "I", "info"]:
     print("To exit type 'exit'\n"
