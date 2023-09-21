@@ -30,8 +30,9 @@ def choose_list():
           pass
         
         list_was_changed = True
-        list(list_input)
-        print(f"List has been changed to the file: '{file_path}'")
+        change_list(list_input)
+        print(f"File has been changed to: '{file_path}'")
+        break
 
       except Exception as e:
         print("An error occurred:", e)
@@ -80,12 +81,13 @@ def delete_list(file_path):
     elif delete_input in ["clear", "Clear", "CLEAR"]:
       with open(file_path, "w") as list:
         pass
-    
+
     else:
       try:
         line_to_remove = int(delete_input) - 1
       except ValueError:
         print("Input must be a valid number.")
+        break
 
       with open(file_path, "r") as list:
         lines = list.readlines()
@@ -97,6 +99,7 @@ def delete_list(file_path):
         with open(file_path, "w") as list:
           list.writelines(lines)
 
+      
       else:
         print("Line number is out of range.")
 
