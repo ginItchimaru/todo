@@ -109,7 +109,7 @@ while running:
     change_list()
   
   if usrinput in ["i", "I", "info", "Info", "INFO"]:
-    print("To exit type 'exit'\nTo see what file is being used type 'file'"
+      print("To exit type 'exit'\nTo see what file is being used, type 'file'\n"
           "DISPLAY LIST:\n  'display' to display the list\n"
           "WRITE MODE:\n  Anything you enter here will be added to the list\n  'write' to enter Write Mode\n"
           "  'exit' to exit write mode\n"
