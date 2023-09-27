@@ -119,7 +119,7 @@ while running:
           "DELETE MODE:\n  enter the number of the line you want to delete to delete it from the list\n"
           "  'delete' to enter Delete Mode\n  'display' to display the list in Delete Mode\n"
           "  'clear' to clear the whole list of its contents\n  'exit' to exit the Delete Mode\n"
-          "How to change file the list is using:\n"
+          "HOW TO CHANGE THE FILE:\n"
           "  Default file is the file list.txt.\n  'change' to change file thats being used for the list\n"
           "  'exit' to exit\n  'file' to see what file is currently in use")
   
