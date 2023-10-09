@@ -16,6 +16,7 @@ def choose_list():
     list_input = input(": ")
 
     if list_input in ["exit", "Exit", "EXIT"]:
+      print("Exited.\n")
       break
 
     if list_input in ["file", "File", "FILE"]:
@@ -59,6 +60,7 @@ def write_list(file_path):
     write_input = input(": ")
     
     if write_input in ["exit", "Exit", "EXIT"]:
+      print("Exited write mode.\n")
       break
     
     else:
@@ -73,10 +75,13 @@ def delete_list(file_path):
     delete_input = input(">> ")
 
     if delete_input in ["exit", "Exit", "EXIT"]:
+      print("Exited delete mode.\n")
       break
 
     elif delete_input in ["display", "Display", "DISPLAY"]:
+      print()
       display_list(file_path)
+      print()
 
     elif delete_input in ["clear", "Clear", "CLEAR"]:
       with open(file_path, "w") as list:
@@ -87,6 +92,7 @@ def delete_list(file_path):
         line_to_remove = int(delete_input) - 1
       except ValueError:
         print("Input must be a valid number.")
+        print("Exited delete mode.\n")
         break
 
       with open(file_path, "r") as list:
@@ -134,12 +140,14 @@ while running:
     running = False
 
   if usrinput in ["display", "Display", "DISPLAY"]:
+    print()
     display_list(file_path)
+    print()
 
   if usrinput in ["write", "Write", "WRITE"]:
-    print("Entered Write Mode")
+    print("\nWrite Mode")
     write_list(file_path)
   
   if usrinput in ["delete", "Delete", "DELETE"]:
-    print("Entered Delete Mode\nEnter the number of the line you want to delete.")
+    print("\nEnter the number of the line you want to delete.\nDelete Mode")
     delete_list(file_path)
